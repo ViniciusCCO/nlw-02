@@ -1,35 +1,57 @@
 import React from 'react'
 
+import api from '../../services/api'
+
 import './styles.css'
 
 import whatsappIcon from '../../assets/images/icons/whatsapp.svg'
 
-function TeacherItem() {
+export interface Teacher {
+    avatar: string
+    bio: string
+    cost: number
+    id: number
+    name: string
+    subject: string
+    whatsapp: string
+}
+
+interface TeacherItemProps {
+    teacher: Teacher
+}
+
+const TeacherItem: React.FC<TeacherItemProps> = ({ teacher }) => {
+    function createNewConnection() {
+        api.post('connections', {
+            user_id: teacher.id
+        })
+    }
+
     return (
         <article className="teacher-item">
             <header>
-                <img src="https://avatars3.githubusercontent.com/u/42738981?s=460&u=47d70481e483b4ffa5c22437a5594a3545bff2dc&v=4" alt="Vinicius" />
+                <img src={teacher.avatar} alt={teacher.name} />
                 <div>
-                    <strong>Vinicius Amorim</strong>
-                    <span>Química</span>
+                    <strong>{teacher.name}</strong>
+                    <span>{teacher.subject}</span>
                 </div>
             </header>
 
-            <p>
-                Meu nome é Vinicius Amorim, tenho 20 anos.
-                        <br /><br />
-                        Estou no 8º semestre de Ciências da Computação na faculdade São Judas (USJT).
-                    </p>
+            <p>{teacher.bio}</p>
 
             <footer>
                 <p>
                     Preço/hora
-                            <strong>R$ 80,00</strong>
+                    <strong>R$ {teacher.cost}</strong>
                 </p>
-                <button type="button">
+                <a
+                    target="_blank"
+                    onClick={createNewConnection}
+                    href={`https://wa.me/${teacher.whatsapp}`}
+                >
                     <img src={whatsappIcon} alt="whatsapp" />
-                            Entrar em contato
-                        </button>
+                    Entrar em contato
+                </a>
             </footer>
         </article>
     )
