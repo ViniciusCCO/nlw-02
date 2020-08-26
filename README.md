@@ -1,5 +1,5 @@
 <p align="center">
-   <img src="https://github.com/ViniciusCCO/nlw-02/tree/master/assets/landing.svg" alt="Turma" width="400"/>   
+   <img src="https://github.com/ViniciusCCO/nlw-02/blob/master/assets/landing.svg" alt="Turma" width="400px"/>   
 </p>
 
 <h1 align="center">Proffy</h1>
@@ -24,8 +24,8 @@
 
 ## Screenshots
 <div style="display: flex; flex-direction: 'row'; align-items: 'center';">
-   <img src="https://github.com/ViniciusCCO/nlw-02/tree/master/assets/web-landing.png" width="400px">
-   <img src="https://github.com/ViniciusCCO/nlw-02/tree/master/assets/web-list.png" width="400px">
+   <img src="https://github.com/ViniciusCCO/nlw-02/blob/master/assets/web-landing.png" width="400px">
+   <img src="https://github.com/ViniciusCCO/nlw-02/blob/master/assets/web-list.png" width="400px">
 </div>
 
 ## :rocket: Como executar o projeto
